@@ -1,0 +1,89 @@
+.materials-section {
+  padding: 120px 10%; 
+  background-color: transparent; 
+}
+
+.materials-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 100px auto;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  margin-bottom: 25px;
+}
+
+.section-desc {
+  color: var(--text-muted, #a89f98);
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.materials-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 80px; 
+}
+
+/* --- THE BASE CARD SETTINGS --- */
+.material-card {
+  display: flex;
+  align-items: stretch;
+  background-color: var(--card-bg, #241811);
+  border-radius: 8px; 
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+  border: 1px solid rgba(212, 163, 115, 0.1);
+  
+  /* THIS IS THE ENGINE FOR THE HOVER TRANSITION */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.4s ease;
+}
+
+.material-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* --- THE 3D HOVER EFFECT --- */
+.material-card:hover {
+  transform: translateY(-12px); /* Lifts the card up 12 pixels */
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6); /* Deepens the shadow underneath */
+  border-color: rgba(212, 163, 115, 0.5); /* Brightens the caramel border */
+}
+
+.card-content {
+  padding: 80px 60px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Title transition setup */
+.card-content h3 {
+  font-size: 2.2rem;
+  color: var(--accent-wood, #D4A373);
+  margin-bottom: 20px;
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Glowing text on card hover */
+.material-card:hover .card-content h3 {
+  text-shadow: 0px 0px 15px rgba(212, 163, 115, 0.4);
+  transform: translateX(5px); /* Slides the title slightly to the right */
+}
+
+.card-content p {
+  color: var(--text-muted, #a89f98);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.card-image {
+  width: 50%;
+  min-height: 450px; 
+  background-size: cover;
+  background-position: center;
+}

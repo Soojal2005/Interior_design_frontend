@@ -1,0 +1,152 @@
+.contact-section {
+  padding: 120px 5%;
+  background-color: var(--bg-color, #1a110a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* THE FROSTED GLASS CARD */
+.contact-glass-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(255, 255, 255, 0.03); /* Extremely transparent white */
+  backdrop-filter: blur(16px); /* The frosted glass blur */
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.contact-glass-text {
+  padding: 60px;
+  background: linear-gradient(135deg, rgba(36, 24, 17, 0.6) 0%, rgba(26, 17, 10, 0.8) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.glass-title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.glass-desc {
+  color: var(--text-muted, #a89f98);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.glass-info-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.info-pill {
+  padding: 10px 20px;
+  background: rgba(212, 163, 115, 0.1);
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  border-radius: 50px;
+  color: var(--accent-wood, #D4A373);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* THE FORM SIDE */
+.contact-glass-form {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.glass-input-group {
+  margin-bottom: 25px;
+}
+
+.contact-glass-form input,
+.contact-glass-form textarea {
+  width: 100%;
+  padding: 18px 20px;
+  background: rgba(0, 0, 0, 0.2); /* Dark inner glass */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact-glass-form input:focus,
+.contact-glass-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-wood, #D4A373);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 20px rgba(212, 163, 115, 0.15);
+}
+
+.glass-btn {
+  width: 100%;
+  padding: 18px;
+  background: var(--accent-wood, #D4A373);
+  color: #1a110a;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.glass-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(212, 163, 115, 0.3);
+}
+
+.glass-btn.sending {
+  background: #a89f98;
+  cursor: wait;
+  animation: pulse 1.5s infinite;
+}
+
+.success-message {
+  text-align: center;
+  padding: 40px;
+  background: rgba(212, 163, 115, 0.1);
+  border-radius: 12px;
+  border: 1px solid var(--accent-wood, #D4A373);
+}
+
+.success-message h3 {
+  color: var(--accent-wood, #D4A373);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.error-text {
+  color: #ff6b6b;
+  margin-top: 15px;
+  text-align: center;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .contact-glass-container { grid-template-columns: 1fr; }
+  .contact-glass-text, .contact-glass-form { padding: 40px 30px; }
+  .glass-title { font-size: 2.5rem; }
+}

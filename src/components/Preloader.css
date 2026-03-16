@@ -1,0 +1,69 @@
+.preloader-container {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100vh;
+  background-color: #120b07; /* The deepest espresso brown */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999; /* Stays above absolutely everything */
+  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1); /* Cinematic ease curve */
+}
+
+/* The class that gets added after 2.5 seconds to pull the curtain up! */
+.preloader-container.slide-up {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.preloader-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preloader-brand {
+  color: var(--text-main, #fdfbf7);
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  letter-spacing: 8px;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeTextIn 0.8s ease forwards 0.3s;
+}
+
+.loading-bar-container {
+  width: 200px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  width: 100%;
+  background-color: var(--accent-wood, #D4A373);
+  transform: translateX(-100%);
+  /* Takes exactly 2 seconds to fill the bar */
+  animation: loadProgress 2s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.5s; 
+}
+
+.preloader-text {
+  color: var(--text-muted, #a89f98);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  opacity: 0;
+  animation: fadeTextIn 0.8s ease forwards 0.8s;
+}
+
+@keyframes fadeTextIn {
+  to { opacity: 1; }
+}
+
+@keyframes loadProgress {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(-30%); }
+  100% { transform: translateX(0); }
+}

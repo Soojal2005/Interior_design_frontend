@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --bg-color: #1a110a;       
+  --card-bg: #241811;        
+  --accent-wood: #D4A373;    
+  --text-main: #fdfbf7;      
+  --text-muted: #a89f98;     
+}
+
+/* Force the entire app to be dark */
+body, html, .App {
+  margin: 0;
+  background-color: var(--bg-color) !important;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+.accent {
+  color: var(--accent-wood);
+  font-style: italic;
+}
+
+/* --- THE 3D TEXT HIGHLIGHT & SHADOW EFFECT --- */
+.section-title, .card-content h3, .overlay-text h3 {
+  transition: all 0.4s ease-in-out;
+}
+
+/* When you hover over the text, it glows like gold */
+.section-title:hover, .card-content h3:hover {
+  text-shadow: 0px 5px 20px rgba(212, 163, 115, 0.6);
+  color: var(--accent-wood);
+  transform: translateY(-2px); /* Slight 3D lift */
+}

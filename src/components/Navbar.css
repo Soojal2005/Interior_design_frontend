@@ -1,0 +1,60 @@
+/* Sticks the navbar to the top of the screen */
+.premium-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 10%;
+  box-sizing: border-box;
+  z-index: 1000;
+  background: transparent;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* The Frosted Glass effect that triggers when you scroll down */
+.premium-navbar.scrolled {
+  padding: 15px 10%;
+  background: rgba(36, 24, 17, 0.95); /* Deep Mocha background */
+  backdrop-filter: blur(10px); /* Blurs the images behind it */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  color: var(--text-main, #fdfbf7);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+  color: var(--accent-wood, #D4A373);
+}
+
+.nav-links {
+  display: flex;
+  gap: 45px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main, #fdfbf7);
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+/* Golden glow when hovering over links */
+.nav-links a:hover {
+  color: var(--accent-wood, #D4A373);
+  text-shadow: 0 0 15px rgba(212, 163, 115, 0.4);
+}

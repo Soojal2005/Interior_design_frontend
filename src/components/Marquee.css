@@ -1,0 +1,31 @@
+.marquee-container {
+  background-color: var(--accent-wood, #D4A373);
+  padding: 25px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.marquee-content {
+  display: inline-block;
+  /* 25s controls the speed of the scroll */
+  animation: scrollMarquee 25s linear infinite; 
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #1a110a; /* Dark text on caramel background */
+}
+
+/* Pauses the scroll if the user hovers over it */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

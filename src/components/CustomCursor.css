@@ -1,0 +1,49 @@
+/* Hide the default mouse cursor across the whole site! */
+.App, .App * {
+  cursor: none !important;
+}
+
+/* The solid inner dot */
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 8px; height: 8px;
+  background-color: var(--accent-wood, #D4A373);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* So it doesn't block you from clicking things */
+  z-index: 99999;
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+}
+
+/* The hollow outer ring that follows slightly behind */
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 30px; height: 30px;
+  border: 1px solid var(--accent-wood, #D4A373);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 99998;
+  transition: width 0.3s, height 0.3s, transform 0.1s ease-out; /* Slight delay for follow effect */
+}
+
+/* When hovering over a button or image */
+.cursor-dot.hover {
+  background-color: transparent;
+}
+
+.cursor-ring.hover {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(212, 163, 115, 0.1);
+  border-color: rgba(212, 163, 115, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+/* Hide custom cursor on mobile phones (touch screens don't use mice) */
+@media (max-width: 768px) {
+  .cursor-dot, .cursor-ring { display: none; }
+  * { cursor: auto !important; }
+} 
